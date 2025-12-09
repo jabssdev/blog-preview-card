@@ -3,7 +3,6 @@
 	--color-white: hsl(0, 0%, 100%);
 	--color-gray-500: hsl(0, 0%, 42%);
 	--color-gray-950: hsl(0, 0%, 7%);
-	--color-gray-950-rgba: rgba(18, 18, 18, 1);
 
 	font-size: clamp(50%, 0.5vw + 50%, 62.5%);
 }
@@ -52,7 +51,7 @@ main {
 	background-color: var(--color-white);
 	border: 1px solid var(--color-gray-950);
 	border-radius: 2rem;
-	box-shadow: 0.8rem 0.8rem 0 var(--color-gray-950-rgba);
+	box-shadow: 0.5rem 0.5rem 0 var(--color-gray-950);
 }
 
 .card {
@@ -94,7 +93,12 @@ main {
 	font-weight: 800;
 }
 
-.card-title:hover {
+.card-title a {
+	color: var(--color-gray-950);
+	text-decoration: none;
+}
+
+.card-title a:hover {
 	color: var(--color-yellow);
 	cursor: pointer;
 }
@@ -102,7 +106,7 @@ main {
 .card-description {
 	font-size: 1.4rem;
 	color: var(--color-gray-500);
-	margin-bottom: 1rem;
+	margin-block-end: 1rem;
 }
 
 .card-author {
@@ -138,6 +142,11 @@ main {
 }
 
 .attribution a:focus {
+	outline: 2px solid var(--color-gray-950);
+	outline-offset: 2px;
+}
+
+.attribution a:focus-visible {
 	outline: 2px solid var(--color-gray-950);
 	outline-offset: 2px;
 }
