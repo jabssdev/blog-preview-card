@@ -5,7 +5,6 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -14,99 +13,105 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
-### The challenge
-
-Users should be able to:
-
-- See hover and focus states for all interactive elements on the page
-
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Blog Preview Card Screenshot](./src/assets/images/screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Repository](https://github.com/jabssdev/blog-preview-card)
+- Live Site URL: [Live Demo](https://blog-preview-card-jabssdev.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS custom properties (CSS variables)
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Modern CSS units (rem, clamp, dvh)
+- Webpack 5 - Module bundler
+- html-loader - For processing HTML templates
+- MiniCssExtractPlugin - For CSS extraction
+- Webpack Dev Server - For local development
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Through this project, I strengthened my understanding of several key concepts:
 
-To see how you can add code snippets, see below:
+**1. Semantic HTML with Proper Elements**
+
+I learned to use the appropriate HTML5 semantic elements for better accessibility and SEO:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<time datetime="2023-12-21" class="card-date">Published 21 Dec 2023</time>
 ```
 
+**2. Security Best Practices for External Links**
+
+Adding `rel="noopener noreferrer"` to external links prevents security vulnerabilities:
+
+```html
+<a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank" rel="noopener noreferrer"> HTML & CSS foundations </a>
+```
+
+**3. Responsive Typography with Clamp**
+
+Using `clamp()` for fluid typography that scales smoothly across all screen sizes:
+
 ```css
-.proud-of-this-css {
-	color: papayawhip;
+:root {
+	font-size: clamp(50%, 0.5vw + 50%, 62.5%);
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-	console.log("🎉");
-};
+**4. Accessibility with Focus States**
+
+Ensuring keyboard navigation works properly with visible focus indicators:
+
+```css
+.attribution a:focus-visible {
+	outline: 2px solid var(--color-gray-950);
+	outline-offset: 2px;
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**6. Webpack Configuration**
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Configured Webpack to handle various assets and optimize for both development and production:
+
+```javascript
+{
+	test: /\.html$/,
+	use: ["html-loader"],
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In future projects, I want to continue focusing on:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- **Advanced CSS**: Exploring CSS Grid layouts and container queries for more sophisticated responsive designs
+- **Accessibility**: Implementing ARIA attributes and ensuring comprehensive keyboard navigation
+- **JavaScript Frameworks**: Learning React to build more interactive and dynamic user interfaces
+- **Performance Optimization**: Implementing lazy loading, code splitting, and advanced Webpack optimization techniques
+- **Modern Build Tools**: Exploring Vite and other modern alternatives to Webpack
+- **CSS Architecture**: Deepening understanding of BEM methodology and CSS Modules for better scalability
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Webpack Documentation](https://webpack.js.org/concepts/) - Essential for understanding module bundling and asset management. The guides on loaders and plugins were particularly helpful.
+- [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Great visual reference for Flexbox properties and centering techniques.
+- [MDN Web Docs: CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) - Comprehensive guide on using CSS variables effectively.
+- [MDN Web Docs: clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) - Helped me understand fluid typography and responsive font sizing.
+- [web.dev: Link rel="noopener"](https://web.dev/external-anchors-use-rel-noopener/) - Explained the security implications of external links and best practices.
+- [Webpack html-loader](https://webpack.js.org/loaders/html-loader/) - Critical for understanding how to process HTML files and their assets in Webpack.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- LinkedIn - [@jabssdev](https://www.linkedin.com/in/jabssdev/)
+- Frontend Mentor - [@jabssdev](https://www.frontendmentor.io/profile/jabssdev)
+- Instagram - [@jabssdev](https://www.instagram.com/jabssdev/)
